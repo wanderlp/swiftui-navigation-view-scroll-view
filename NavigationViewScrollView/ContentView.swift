@@ -9,8 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: true) {
+                VStack(spacing: 30) {
+                    ForEach(0..<10) { item in
+                        GeometryReader { geometry in
+                            VStack {
+                                Text("Link")
+                            }
+                            .frame(width: 300, height: 200)
+                            .background(.blue)
+                            .cornerRadius(30)
+                        }
+                        .frame(width: 300, height: 200)
+                    }
+                }
+            }
+            .navigationBarTitle(Text("Title Text"))
+        }
     }
 }
 
