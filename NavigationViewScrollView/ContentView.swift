@@ -13,15 +13,17 @@ struct ContentView: View {
             ScrollView(.vertical, showsIndicators: true) {
                 VStack(spacing: 30) {
                     ForEach(0..<10) { item in
-                        GeometryReader { geometry in
-                            VStack {
-                                Text("Link")
+                        NavigationLink(destination: DetailView()) {
+                            GeometryReader { geometry in
+                                VStack {
+                                    Text("Link")
+                                }
+                                .frame(width: 300, height: 200)
+                                .background(.blue)
+                                .cornerRadius(30)
                             }
                             .frame(width: 300, height: 200)
-                            .background(.blue)
-                            .cornerRadius(30)
                         }
-                        .frame(width: 300, height: 200)
                     }
                 }
             }
